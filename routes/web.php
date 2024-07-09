@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\TesteController;
+
 Route::post('/', function () {
     return ('Pedro como texto e não como a view');
 });
@@ -148,3 +150,9 @@ Route::patch("/teste2", function(){
 Route::delete("/teste2", function(){
     return ("delete");
 });
+
+// Aula 4
+
+Route::get("/controlador", [TesteController::class, "index"]);
+
+Route::get("/tabnovo/{t?}", [TesteController::class, "tabela"]);
