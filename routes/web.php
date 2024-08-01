@@ -6,6 +6,8 @@ use App\Http\Controllers\TesteController;
 
 use App\Http\Controllers\TesteResController;
 
+use App\Http\Controllers\MedalhistasController;
+
 Route::post('/', function () {
     return ('Pedro como texto e não como a view');
 });
@@ -164,4 +166,6 @@ Route::get("/tabnovo/{t?}", [TesteController::class, "tabela"]);
 Route::resource("/aula5", TesteResController::class); // Faz com que não seja necessário criar uma rota 
                                                     // diferente para cada função do CRUD do Controller
 
- 
+// Atividade da aula 5
+
+Route::resource("/medalhistas", MedalhistasController::class);
