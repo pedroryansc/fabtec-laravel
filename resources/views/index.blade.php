@@ -1,0 +1,1 @@
+Juntos, o resource e o controller redirecionaram para este index.

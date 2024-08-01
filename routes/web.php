@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TesteController;
 
+use App\Http\Controllers\TesteResController;
+
 Route::post('/', function () {
     return ('Pedro como texto e não como a view');
 });
@@ -156,3 +158,10 @@ Route::delete("/teste2", function(){
 Route::get("/controlador", [TesteController::class, "index"]);
 
 Route::get("/tabnovo/{t?}", [TesteController::class, "tabela"]);
+
+// Aula 5
+
+Route::resource("/aula5", TesteResController::class); // Faz com que não seja necessário criar uma rota 
+                                                    // diferente para cada função do CRUD do Controller
+
+ 
