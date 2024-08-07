@@ -8,9 +8,11 @@ use App\Http\Controllers\TesteResController;
 
 use App\Http\Controllers\MedalhistasController;
 
+/*
 Route::post('/', function () {
     return ('Pedro como texto e não como a view');
 });
+*/
 
 /*
 Route::get('/', function () {
@@ -169,3 +171,7 @@ Route::resource("/aula5", TesteResController::class); // Faz com que não seja n
 // Atividade da aula 5
 
 Route::resource("/medalhistas", MedalhistasController::class);
+
+Route::get("/", function(){
+    return redirect("/medalhistas");
+});

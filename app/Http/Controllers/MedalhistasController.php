@@ -27,7 +27,7 @@ class MedalhistasController extends Controller
      */
     public function store(Request $request)
     {
-        return view("index");
+        return "Store";
     }
 
     /**
@@ -35,7 +35,7 @@ class MedalhistasController extends Controller
      */
     public function show(string $id)
     {
-        return view("show");
+        return view("show", ["id"=>$id]);
     }
 
     /**
@@ -43,7 +43,7 @@ class MedalhistasController extends Controller
      */
     public function edit(string $id)
     {
-        return view("edit");
+        return view("edit", ["id"=>$id]);
     }
 
     /**
@@ -51,7 +51,7 @@ class MedalhistasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return view("index");
+        return "Update $id";
     }
 
     /**
@@ -59,6 +59,6 @@ class MedalhistasController extends Controller
      */
     public function destroy(string $id)
     {
-        return view("index");
+        return "Destroy $id";
     }
 }

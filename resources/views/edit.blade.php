@@ -6,11 +6,13 @@
     <title>Edit - Medalhistas</title>
 </head>
 <body>
-    <ul>
-        <li><a href="{{route('medalhistas.index')}}">Lista de medalhistas</a></li>
-        <li><a href="{{route('medalhistas.create')}}">Cadastrar medalhista</a></li>
-    </ul>
-    <form action="{{route('medalhistas.index')}}" method="post">
+    @include("menu")
+    <form action="{{route('medalhistas.update', $id)}}" method="post">
+        @csrf
+        @method("PUT")
+        <span>ID:</span><br>
+        <input readonly value="{{$id}}">
+        <br><br>
         <span>Atleta:</span><br>
         <input type="text" name="atleta" id="atleta" value="Rebecca Andrade">
         <br><br>

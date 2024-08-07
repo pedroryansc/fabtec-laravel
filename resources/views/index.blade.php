@@ -6,10 +6,7 @@
     <title>Index - Medalhistas</title>
 </head>
 <body>
-    <ul>
-        <li><a href="{{route('medalhistas.index')}}">Lista de medalhistas</a></li>
-        <li><a href="{{route('medalhistas.create')}}">Cadastrar medalhista</a></li>
-    </ul>
+    @include("menu")
     <table border="1">
         <caption>
             <strong>Olimpíadas de Paris 2024</strong>
@@ -25,7 +22,13 @@
             <td>Ginástica artística</td>
             <td><a href="{{route('medalhistas.show', 1)}}">Visualizar</a></td>
             <td><a href="{{route('medalhistas.edit', 1)}}">Editar</a></td>
-            <td><a href="{{route('medalhistas.index')}}">Excluir</a></td>
+            <td>
+                <form name="form_delete" action="{{route('medalhistas.destroy', 1)}}" method="post">
+                    @csrf
+                    @method("DELETE")
+                    <a href="#" onclick="this.parentNode.submit();">Excluir</a>
+                </form>
+            </td>
         </tr>
         <tr>
             <td>2</td>
@@ -33,7 +36,13 @@
             <td>Skate Street</td>
             <td><a href="{{route('medalhistas.show', 2)}}">Visualizar</a></td>
             <td><a href="{{route('medalhistas.edit', 2)}}">Editar</a></td>
-            <td><a href="{{route('medalhistas.index')}}">Excluir</a></td>
+            <td>
+                <form name="form_delete" action="{{route('medalhistas.destroy', 2)}}" method="post">
+                    @csrf
+                    @method("DELETE")
+                    <a href="#" onclick="this.parentNode.submit();">Excluir</a>
+                </form>
+            </td>
         </tr>
         <tr>
             <td>3</td>
@@ -41,7 +50,13 @@
             <td>Judô</td>
             <td><a href="{{route('medalhistas.show', 3)}}">Visualizar</a></td>
             <td><a href="{{route('medalhistas.edit', 3)}}">Editar</a></td>
-            <td><a href="{{route('medalhistas.index')}}">Excluir</a></td>
+            <td>
+                <form name="form_delete" action="{{route('medalhistas.destroy', 3)}}" method="post">
+                    @csrf
+                    @method("DELETE")
+                    <a href="#" onclick="this.parentNode.submit();">Excluir</a>
+                </form>
+            </td>
         </tr>
         <tr>
             <td>4</td>
@@ -49,7 +64,13 @@
             <td>Judô</td>
             <td><a href="{{route('medalhistas.show', 4)}}">Visualizar</a></td>
             <td><a href="{{route('medalhistas.edit', 4)}}">Editar</a></td>
-            <td><a href="{{route('medalhistas.index')}}">Excluir</a></td>
+            <td>
+                <form name="form_delete" action="{{route('medalhistas.destroy', 4)}}" method="post">
+                    @csrf
+                    @method("DELETE")
+                    <a href="#" onclick="this.parentNode.submit();">Excluir</a>
+                </form>
+            </td>
         </tr>
         <tr>
             <td>5</td>
@@ -57,7 +78,13 @@
             <td>Ginástica artística</td>
             <td><a href="{{route('medalhistas.show', 5)}}">Visualizar</a></td>
             <td><a href="{{route('medalhistas.edit', 5)}}">Editar</a></td>
-            <td><a href="{{route('medalhistas.index')}}">Excluir</a></td>
+            <td>
+                <form name="form_delete" action="{{route('medalhistas.destroy', 5)}}" method="post">
+                    @csrf
+                    @method("DELETE")
+                    <a href="#" onclick="this.parentNode.submit();">Excluir</a>
+                </form>
+            </td>
         </tr>
         <tr>
             <td>6</td>
@@ -65,7 +92,13 @@
             <td>Ginástica artística</td>
             <td><a href="{{route('medalhistas.show', 6)}}">Visualizar</a></td>
             <td><a href="{{route('medalhistas.edit', 6)}}">Editar</a></td>
-            <td><a href="{{route('medalhistas.index')}}">Excluir</a></td>
+            <td>
+                <form name="form_delete" action="{{route('medalhistas.destroy', 6)}}" method="post">
+                    @csrf
+                    @method("DELETE")
+                    <a href="#" onclick="this.parentNode.submit();">Excluir</a>
+                </form>
+            </td>
         </tr>
         <tr>
             <td>7</td>
@@ -73,7 +106,13 @@
             <td>Ginástica artística</td>
             <td><a href="{{route('medalhistas.show', 7)}}">Visualizar</a></td>
             <td><a href="{{route('medalhistas.edit', 7)}}">Editar</a></td>
-            <td><a href="{{route('medalhistas.index')}}">Excluir</a></td>
+            <td>
+                <form name="form_delete" action="{{route('medalhistas.destroy', 7)}}" method="post">
+                    @csrf
+                    @method("DELETE")
+                    <a href="#" onclick="this.parentNode.submit();">Excluir</a>
+                </form>
+            </td>
         </tr>
         <tr>
             <td>8</td>
@@ -81,7 +120,13 @@
             <td>Ginástica artística</td>
             <td><a href="{{route('medalhistas.show', 8)}}">Visualizar</a></td>
             <td><a href="{{route('medalhistas.edit', 8)}}">Editar</a></td>
-            <td><a href="{{route('medalhistas.index')}}">Excluir</a></td>
+            <td>
+                <form name="form_delete" action="{{route('medalhistas.destroy', 8)}}" method="post">
+                    @csrf
+                    @method("DELETE")
+                    <a href="#" onclick="this.parentNode.submit();">Excluir</a>
+                </form>
+            </td>
         </tr>
     </table>
 </body>

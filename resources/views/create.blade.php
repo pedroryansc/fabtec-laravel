@@ -6,11 +6,9 @@
     <title>Create - Medalhistas</title>
 </head>
 <body>
-    <ul>
-        <li><a href="{{route('medalhistas.index')}}">Lista de medalhistas</a></li>
-        <li><a href="{{route('medalhistas.create')}}">Cadastrar medalhista</a></li>
-    </ul>
+    @include("menu")
     <form action="{{route('medalhistas.store')}}" method="post">
+        @csrf
         <span>Atleta:</span><br>
         <input type="text" name="atleta" id="atleta">
         <br><br>
