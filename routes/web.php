@@ -3,8 +3,18 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TesteController;
-
 use App\Http\Controllers\TesteResController;
+
+use App\Http\Controllers\SalarioController;
+use App\Http\Controllers\TemperaturaController;
+use App\Http\Controllers\SiteController;
+use App\Http\Controllers\FabtecController;
+use App\Http\Controllers\DivisoesController;
+use App\Http\Controllers\ComparacaoController;
+use App\Http\Controllers\PesoController;
+use App\Http\Controllers\CaixaController;
+use App\Http\Controllers\FibonacciController;
+use App\Http\Controllers\NumerosController;
 
 use App\Http\Controllers\MedalhistasController;
 
@@ -162,6 +172,40 @@ Route::delete("/teste2", function(){
 Route::get("/controlador", [TesteController::class, "index"]);
 
 Route::get("/tabnovo/{t?}", [TesteController::class, "tabela"]);
+
+// Atividades da aula 4
+
+Route::get("/salario2/{dias}/{diaria}", [SalarioController::class, "calcSal"]);
+
+Route::get("/temperatura2/{valor}/{tipo}", [TemperaturaController::class, "converter"])->where("tipo", "[cf]");
+
+Route::get("/ifc2", [SiteController::class, "redirecionar"]);
+
+Route::get("/fabtec2", [FabtecController::class, "redirecionar"])->name("fabtec2");
+
+Route::get("/fabrica2", [FabtecController::class, "redirecionarRota"])->name("fabrica");
+
+Route::prefix("/laravel2")->group(function(){
+    Route::get("/route", [DivisoesController::class, "route"]);
+    Route::get("/database", [DivisoesController::class, "database"]);
+    Route::get("/public", [DivisoesController::class, "public"]);
+});
+
+Route::prefix("/php2")->group(function(){
+    Route::get("/if", [DivisoesController::class, "if"]);
+    Route::get("/for", [DivisoesController::class, "for"]);
+    Route::get("/while", [DivisoesController::class, "while"]);
+});
+
+Route::get("/maior/{n1}/{n2}", [ComparacaoController::class, "comparar"]);
+
+Route::get("/pesoIdeal/{altura}/{peso}/{genero}", [PesoController::class, "calcPesoIdeal"])->where("genero", "[FMfm]");
+
+Route::get("/saque/{valor}", [CaixaController::class, "efetuarSaque"]);
+
+Route::get("/fibonacci2", [FibonacciController::class, "mostrarSequencia"]);
+
+Route::get("/numeros/{limite}", [NumerosController::class, "calcularNumeros"]);
 
 // Aula 5
 
