@@ -18,6 +18,8 @@ use App\Http\Controllers\NumerosController;
 
 use App\Http\Controllers\MedalhistasController;
 
+use App\Http\Controllers\PessoaController;
+
 /*
 Route::post('/', function () {
     return ('Pedro como texto e não como a view');
@@ -207,15 +209,25 @@ Route::get("/fibonacci2", [FibonacciController::class, "mostrarSequencia"]);
 
 Route::get("/numeros/{limite}", [NumerosController::class, "calcularNumeros"]);
 
+// Fim das atividades
+
 // Aula 5
 
 Route::resource("/aula5", TesteResController::class); // Faz com que não seja necessário criar uma rota 
                                                     // diferente para cada função do CRUD do Controller
 
-// Atividade da aula 5
+// 1ª Atividade da aula 5
 
 Route::resource("/medalhistas", MedalhistasController::class);
 
 Route::get("/", function(){
     return redirect("/medalhistas");
 });
+
+// Fim da atividade
+
+// 2ª Atividade da aula 5
+
+Route::resource("/pessoa", PessoaController::class);
+
+// Fim da atividade
