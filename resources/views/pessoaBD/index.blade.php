@@ -6,7 +6,7 @@
     <title>Index - Lista de pessoas</title>
 </head>
 <body>
-    @include("pessoa.menu")
+    @include("pessoaBD.menu")
     <table border="1">
         <thead>
             <tr>
@@ -16,15 +16,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($pessoas as $pessoa)
+            @foreach($info as $pessoa)
                 <tr>
                     <td>{{$pessoa->id}}</td>
                     <td>{{$pessoa->nome}}</td>
                     <td>{{$pessoa->email}}</td>
-                    <td><a href="{{route('pessoaJSON.show', $pessoa->id)}}">Detalhes</a></td>
-                    <td><a href="{{route('pessoaJSON.edit', $pessoa->id)}}">Editar</a></td>
+                    <td><a href="{{route('pessoaBD.show', $pessoa->id)}}">Detalhes</a></td>
+                    <td><a href="{{route('pessoaBD.edit', $pessoa->id)}}">Editar</a></td>
                     <td>
-                        <form name="form_delete_{{$pessoa->id}}" action="{{route('pessoaJSON.destroy', $pessoa->id)}}" method="post">
+                        <form name="form_delete_{{$pessoa->id}}" action="{{route('pessoaBD.destroy', $pessoa->id)}}" method="post">
                             @csrf
                             @method("DELETE")
                             <a href="#" onclick="confirmDelete('form_delete_{{$pessoa->id}}');">Excluir</a>

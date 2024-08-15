@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PessoaController extends Controller
+class PessoaJSONController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -49,7 +49,7 @@ class PessoaController extends Controller
 
         $this->salvar($pessoas);
 
-        return redirect()->route("pessoa.index");
+        return redirect()->route("pessoaJSON.index");
     }
 
     /**
@@ -108,7 +108,7 @@ class PessoaController extends Controller
 
         $this->salvar($pessoas);
 
-        return redirect()->route("pessoa.index");
+        return redirect()->route("pessoaJSON.index");
     }
 
     /**
@@ -126,7 +126,7 @@ class PessoaController extends Controller
 
         $this->salvar($novoArray);
 
-        return redirect()->route("pessoa.index");
+        return redirect()->route("pessoaJSON.index");
     }
 
     function salvar($pessoas){

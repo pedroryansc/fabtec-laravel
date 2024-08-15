@@ -6,9 +6,9 @@
     <title>Create - Cadastro de pessoas</title>
 </head>
 <body>
-    @include("pessoa.menu")
-    <form action="{{route('pessoaJSON.store')}}" method="post">
-        @include("pessoa.form")
+    @include("pessoaBD.menu")
+    <form action="{{route('pessoaBD.store')}}" method="post">
+        @include("pessoaBD.form")
     </form>
 </body>
 </html>

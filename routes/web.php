@@ -18,7 +18,9 @@ use App\Http\Controllers\NumerosController;
 
 use App\Http\Controllers\MedalhistasController;
 
-use App\Http\Controllers\PessoaController;
+use App\Http\Controllers\PessoaJSONController;
+
+use App\Http\Controllers\PessoaBDController;
 
 /*
 Route::post('/', function () {
@@ -228,6 +230,12 @@ Route::get("/", function(){
 
 // 2ª Atividade da aula 5
 
-Route::resource("/pessoa", PessoaController::class);
+Route::resource("/pessoaJSON", PessoaJSONController::class);
+
+// Fim da atividade
+
+// Atividade da aula 6
+
+Route::resource("/pessoaBD", PessoaBDController::class);
 
 // Fim da atividade

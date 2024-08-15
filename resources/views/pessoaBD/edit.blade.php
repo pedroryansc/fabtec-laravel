@@ -6,10 +6,10 @@
     <title>Edit - Edição de pessoa</title>
 </head>
 <body>
-    @include("pessoa.menu")
-    <form action="{{route('pessoaJSON.update', $registro->id)}}" method="post">
+    @include("pessoaBD.menu")
+    <form action="{{route('pessoaBD.update', $pessoa->id)}}" method="post">
         @method("PUT")
-        @include("pessoa.form")
+        @include("pessoaBD.form")
     </form>
 </body>
 </html>
