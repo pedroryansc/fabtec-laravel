@@ -31,14 +31,18 @@ class PessoaBDController extends Controller
      */
     public function store(Request $request)
     {
-        $pessoa = new Pessoa();
+        try{
+            $pessoa = new Pessoa();
 
-        $pessoa->nome = $request->input("nome");
-        $pessoa->email = $request->input("email");
+            $pessoa->nome = $request->input("nome");
+            $pessoa->email = $request->input("email");
 
-        $pessoa->save();
+            $pessoa->save();
 
-        return redirect()->route("pessoaBD.index");
+            return redirect()->route("pessoaBD.index");
+        } catch(\Exception $e){
+            
+        }
     }
 
     /**
@@ -66,14 +70,18 @@ class PessoaBDController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $pessoa = Pessoa::find($id);
+        try{
+            $pessoa = Pessoa::find($id);
 
-        $pessoa->nome = $request->input("nome");
-        $pessoa->email = $request->input("email");
+            $pessoa->nome = $request->input("nome");
+            $pessoa->email = $request->input("email");
 
-        $pessoa->save();
+            $pessoa->save();
 
-        return redirect()->route("pessoaBD.index");
+            return redirect()->route("pessoaBD.index");
+        } catch(\Exception $e){
+
+        }
     }
 
     /**
@@ -81,10 +89,18 @@ class PessoaBDController extends Controller
      */
     public function destroy(string $id)
     {
-        $pessoa = Pessoa::find($id);
+        try{
+            $pessoa = Pessoa::find($id);
 
-        $pessoa->delete();
+            $pessoa->delete();
 
-        return redirect()->route("pessoaBD.index");
+            return redirect()->route("pessoaBD.index");
+        } catch(\Exception $e){
+            if($e instanceof \Illuminate\Database\QueryException && $e->errorInfo[1] == 1451){
+                // ... Não é possível excluir, pois o item está vinculado em outra tabela
+            } else{
+                // ... Outro erro no momento da exclusão
+            }
+        }
     }
 }
