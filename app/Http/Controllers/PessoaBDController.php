@@ -41,7 +41,7 @@ class PessoaBDController extends Controller
 
             return redirect()->route("pessoaBD.index");
         } catch(\Exception $e){
-            
+            // Tratamento para mostrar ao usuário que a operação não foi executada com sucesso
         }
     }
 
@@ -80,7 +80,7 @@ class PessoaBDController extends Controller
 
             return redirect()->route("pessoaBD.index");
         } catch(\Exception $e){
-
+            // Tratamento para mostrar ao usuário que a operação não foi executada com sucesso
         }
     }
 
