@@ -26,4 +26,23 @@ class Pedido extends Model
             $total += ($produto->pivot->quantidade * $produto->pivot->valorUnitario);
         return $total;
     }
+
+    public function mediaQuantidades(){
+        $quantTotal = 0;
+        $quantProdutos = 0;
+        foreach($this->produtos as $produto){
+            $quantTotal += $produto->pivot->quantidade;
+            $quantProdutos++;
+        }
+        $mediaQuant = $quantTotal / $quantProdutos;
+        return $mediaQuant;
+
+    }
+
+    public function totalQuantidades(){
+        $quant = 0;
+        foreach($this->produtos as $produto)
+            $quant += $produto->pivot->quantidade;
+        return $quant;
+    }
 }
